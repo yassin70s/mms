@@ -1,0 +1,77 @@
+{% extends 'admin/change_list.html' %}
+{% load static %}
+{% block my_tital %}
+          <!-- info row -->
+    <div id="my_invoice" class="d-print-block d-none">
+    <div class="row invoice-info">
+      <div class="col-sm-3 invoice-col">
+        <address><center>
+           المنطقة العسكرية السابعة<br>
+               مديرية التدريب والتأهيل<br>
+             إدارة الخدمات الطبية<br>
+                الطب الوقائي<br>
+        </center></address>
+      </div>
+      <!-- /.col -->
+                <div class="col-sm-7 invoice-col">
+                  <center>
+                      بسم الله الرحمن الرحيم
+                    <address>
+                    
+                      <img src="{% static 'f.jpg' %}" class="" style="width: 85px; hight: 85px;" alt="">
+                    </address>
+                    
+                    
+                  </center>
+                </div>
+      <!-- /.col -->
+      <div class="col-sm-2 invoice-col">
+                    <br>
+                  <b>الرقم: </b>##<br>
+                 <b>التاريخ: </b><span dir="ltr"></span>
+                 <br>
+                  
+                </div>
+      <!-- /.col -->
+    </div>
+    </div>
+    <!-- /.row -->                          
+{% endblock my_tital %}
+
+
+
+
+
+
+{% block j %}
+    
+<script>
+   
+    document.getElementById("result_list").classList.remove("table-striped")
+    document.getElementById("result_list").classList.add("table-sm")
+    //document.getElementsByClassName("dataTables_info")[0].classList.add("d-none")
+      
+</script>
+<script>
+    function my_print(){
+      document.getElementsByClassName("dataTables_info")[0].classList.add("d-none")
+      document.getElementsByClassName("main-footer text-sm")[0].classList.add("d-none")
+      var tital = document.getElementsByClassName("select2-selection__rendered")
+      var th = document.getElementById("result_list").getElementsByTagName("th")[0].getElementsByClassName("text")[0]
+
+      th.classList.add("text-center")
+      th.innerHTML = tital[0].innerHTML + "خلال شهر: " + tital[1].innerHTML + " /2023م"
+
+      document.getElementById("change-list-filters").classList.add("no-print")
+      document.getElementsByClassName("content-wrapper")[0].classList.add("coco")
+      document.getElementsByClassName("content border-bottom mb-2")[0].classList.add("no-print")
+      var co = document.getElementsByClassName("coco")[0]
+      co.classList.remove("content-wrapper")
+      window.print()
+      co.classList.add("content-wrapper")
+  
+      
+    }
+  </script>
+{% endblock j %}
+

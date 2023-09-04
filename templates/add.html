@@ -1,0 +1,31 @@
+{% extends "base_site.html" %}
+
+{% block breadcrumbs %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">الرئيسية</a></li>
+        <li class="breadcrumb-item"><a href="">{{ header.branch }}</a></li>
+        <li class="breadcrumb-item active">{{ header.depart }}</li>
+    </ol>
+{% endblock %}
+
+{% block content_title %} {{header.title}}{% endblock %}
+{% block coltype %}flex{% endblock %}
+
+    {% block page_actions %}
+        <div class="col-12 col-md-auto d-flex align-items-center justify-content-end page-actions">
+            {% block object-tools %}
+                {% block object-tools-items %}
+                    
+                {% endblock %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+
+
+{% block content %}
+
+{{content}}
+
+{% endblock content %}
+
+   

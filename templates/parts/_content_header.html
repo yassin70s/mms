@@ -1,0 +1,30 @@
+{% if not is_popup %}
+            <div class="content border-bottom mb-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-auto d-flex flex-grow-1 align-items-center">
+                            {% block content_title %} jjj {% endblock %}
+                            {% block breadcrumbs %}
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">الرئيسية</a></li>
+                                    <li class="breadcrumb-item"><a href="">{{haeder.app_verbose_name}}</a></li>
+                                    <li class="breadcrumb-item active">{{haeder.verbose_name_plural}}</li>
+                                </ol>
+                            {% endblock %}
+
+                           
+
+                        </div>
+                        {% block page_actions %}
+                            <div class="col-12 col-md-auto d-flex align-items-center justify-content-end page-actions">
+                                {% block object-tools %}
+                                    {% block object-tools-items %}
+                                        
+                                    {% endblock %}
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+{% endif %}

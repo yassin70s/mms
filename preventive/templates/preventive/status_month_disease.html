@@ -1,0 +1,465 @@
+{% extends 'admin/change_list.html' %}
+
+
+{% block content %}
+
+
+
+
+<div class="text-primary text-center col-12 border-top border-right">
+    <div class="row">
+        <div class="col-4 border-left">
+            <div class="row border-bottom">
+                <div class="col-1 border-left">
+                    <div class="row border-bottom">
+                        <div class="col-12 border-right">
+                            م
+                        </div>
+                    </div> 
+                    <div class="row border-bottom">
+                        <div class="col-12 border-right">
+                            1
+                        </div>
+                    
+                    </div> 
+                </div>
+                <div class="col-11 border-left">
+                    <div class="row border-bottom">
+                        <div class="col-3 border-right">
+                            الأعراض
+                        </div>
+                        <div class="col-3 border-right">
+                            التشخيص
+                        </div>
+                        <div class="col-3 border-right">
+                            الأسباب
+                        </div>
+                        <div class="col-3 border-right">
+                            الأدوية
+                        </div>
+                    </div> 
+                    {% for f in ms %}
+                    <div class="row border-bottom">
+                
+                        <div class="col-6 border-right">
+                            {{f.content}}
+                        </div>
+                        <div class="col-2 border-right">
+                            {{f.id}}
+                        </div>
+                        
+                    </div>
+                    
+{% endfor %}
+ 
+                </div>
+            </div> 
+        </div>
+       
+        
+        <div class="col-1 border-left">
+            <div class="row border-bottom">
+                <div class="col-3 border-right">
+                    ع
+                </div>
+                <div class="col-3 border-right">
+                    ت
+                </div>
+                <div class="col-3 border-right">
+                    س
+                </div>
+                <div class="col-3 border-right">
+                    ص
+                </div>
+            </div> 
+            <div class="row border-bottom">
+        
+                <div class="col-3 border-right">
+                    
+                </div>
+                <div class="col-3 border-right">
+                    
+                </div>
+                <div class="col-3 border-right">
+                    
+                </div>
+                <div class="col-3 border-right">
+                    <br>
+                </div>
+            </div> 
+        </div>
+       
+    </div>
+</div>
+تت
+<div class="text-primary text-center col-12 border-bottom border-right">
+    <div class="row  border-top">
+        <div class="col-3 border-left p-1">
+             التشخيص
+        </div>
+    </div>
+    <div class="row  border-top">
+        {% for ca_di in categorie_disease %}
+            <div class="col-2 border-left">
+                <div class="row border-bottom">
+                    <div class="col-12">
+                    {{ ca_di.name }}
+                    </div>
+                </div>
+                {% for di in disease %}
+                {% if di.categorie_id == ca_di.id %}
+                    <div class="row border-bottom">
+                        <div class="col-8 b">
+                            {{ di.name }}
+                        </div>
+                        <div class="col-4 border-left">
+                            0
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}  
+        
+    </div>
+</div>
+اا
+<div class="text-primary text-center col-12 border-bottom border-right">
+    <div class="row  border-top">
+        <div class="col-3 border-left p-1">
+             الأسباب
+        </div>
+    </div>
+    <div class="row  border-top">  
+        <div class="col-2 border-left">
+            <div class="row border-bottom">
+                <div class="col-12">
+                 اسم الفئة
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 b">
+                    اسم العرض
+                </div>
+                <div class="col-4 border-left">
+                    النتيجة
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="row border-bottom">
+                <div class="col-12">
+                 اسم الفئة
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 b">
+                    اسم العرض
+                </div>
+                <div class="col-4 border-left">
+                    النتيجة
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+gg
+
+
+<div class="text-primary text-center col-12 border-bottom border-right">
+    <div class="row  border-top">
+        <div class="col-3 border-left p-1">
+             الأدوية المصروفة
+        </div>
+    </div>
+    <div class="row  border-top">  
+        <div class="col-2 border-left">
+            <div class="row border-bottom">
+                <div class="col-12">
+                 اسم الفئة
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 b">
+                    اسم العرض
+                </div>
+                <div class="col-4 border-left">
+                    النتيجة
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border-left">
+            <div class="row border-bottom">
+                <div class="col-12">
+                 اسم الفئة
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 b">
+                    اسم العرض
+                </div>
+                <div class="col-4 border-left">
+                    النتيجة
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+غغت
+
+
+<div class="text-primary text-center col-12 border-bottom border-right">
+    <div class="row  border-top">
+        <div class="col-3 border-left p-1">
+             النتيجة النهائية
+        </div>
+    </div>
+    <div class="row  border-top">  
+        <div class="col-2 border-left">
+            <div class="row">
+                <div class="col-12">
+                 اسم الفئة
+                </div>
+            </div>
+            
+        </div>
+       
+    </div>
+</div>
+
+
+
+
+بب
+
+
+<div class="text-primary text-center col-12 border-bottom border-right">
+    <div class="row  border-top">
+        <div class="col-6 border-left p-1">
+             أولا: الحالات المرضية التي يجب التفريق بين الحالات المشتبهة والمؤكدة مخبرياً
+        </div>
+        <div class="col-6 border-left p-1">
+             ثانيا: حالات عامة
+        </div> 
+    </div>
+    <div class="row  border-top">  
+        <div class="col-1 border-left p-2">
+            م
+        </div>
+        <div class="col-3 border-left p-2">
+             اسم المرض
+        </div>
+        <div class="col-2 border-left">
+            <div class="row border-bottom">
+                <div class="col-12">
+                 عدد الحالات
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 b">
+                    مؤكدة مخبرياً
+                </div>
+                <div class="col-4 border-left">
+                     مشتبهة
+                </div>
+            </div>
+        </div>
+            
+        <div class="col-1 border-left p-2">
+             م
+        </div>
+        <div class="col-3 border-left p-2">
+             اسم المرض
+        </div>
+        <div class="col-2 border-left p-2">
+             عدد الحالات
+        </div>
+        
+    </div>
+</div>
+
+<br><br>g<br><br><br><br>
+
+
+
+<div class="text-primary text-center col-12 border-bottom border-right">
+    <div class="row  border-top">
+        <div class="col-2 border-left p-2">
+            إجمالي الحالات المرضية
+        </div>
+        <div class="col-2 border-left p-2">
+            اجمالي الحالات التي عولجت في مراكز المنطقة
+        </div>
+        <div class="col-4 border-right border-left">
+            <div class="row p-2">
+                <div class="col-12">
+                    الحالات المحولة
+                </div> 
+            </div> 
+            <div class="row border-top">
+                <div class="col-3">
+                    العدد
+                </div> 
+                <div class="col-9 border-left">
+                    اسباب
+                </div> 
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="row p-2">
+                <div class="col-12">
+                    حالات الوفاة
+                </div> 
+            </div>
+            <div class="row border-top">
+                <div class="col-3">
+                    العدد
+                </div> 
+                <div class="col-9 border-left">
+                    اسباب الوفاة
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="row  border-top">
+        <div class="col-2 border-left p-2">
+            55
+        </div>
+        <div class="col-2 border-left p-2">
+            55
+        </div>
+        <div class="col-4 border-right border-left">
+            <div class="row border-bottom">
+                <div class="col-3">
+                    5
+                </div> 
+                <div class="col-9 border-left">
+                    sfjfglj;j
+                </div> 
+            </div>
+            <div class="row border-bottom">
+                <div class="col-3">
+                    5
+                </div> 
+                <div class="col-9 border-left">
+                    sfjfglj;j
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    5
+                </div> 
+                <div class="col-9 border-left">
+                    sfjfglj;j
+                </div> 
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="row border-bottom">
+                <div class="col-3">
+                    5
+                </div> 
+                <div class="col-9 border-left">
+                    sfjfglj;j
+                </div> 
+            </div>
+            <div class="row border-bottom">
+                <div class="col-3">
+                    5
+                </div> 
+                <div class="col-9 border-left">
+                    sfjfglj;j
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+g<br><br><br><br>
+
+
+
+<div class="text-primary text-center col-12 border-bottom border-right">
+    <div class="row  border-top">
+        <div class="col-3 border-left p-2">
+            اسم المرض
+        </div>
+        <div class="col-1 border-left p-2">
+            عدد الحالات
+        </div>
+        <div class="col-2 border-left">
+            <div class="row p-2">
+                <div class="col-12">
+                    الفرق عن الشهر السابق
+                </div> 
+            </div> 
+            <div class="row border-top">
+                <div class="col-6">
+                    زيادة
+                </div> 
+                <div class="col-6 border-left">
+                    نقص
+                </div> 
+            </div>
+        </div>
+        <div class="col-5 border-left p-2">
+           الأسباب
+        </div>
+    </div>
+    <div class="row  border-top">
+        <div class="col-3 border-left p-2">
+            اسم المرض
+        </div>
+        <div class="col-1 border-left p-2">
+            عدد الحالات
+        </div>
+        <div class="col-2 border-left">
+            <div class="row p-2">
+                <div class="col-12">
+                    الفرق عن الشهر السابق
+                </div> 
+            </div> 
+            <div class="row border-top">
+                <div class="col-6">
+                    زيادة
+                </div> 
+                <div class="col-6 border-left">
+                    نقص
+                </div> 
+            </div>
+        </div>
+        <div class="col-5 border-left p-2">
+           الأسباب
+        </div>
+    </div>
+</div>
+
+
+
+
+
+        
+{% endblock %}
+
+
+{% block j %}
+    
+<script>
+    document.getElementById("result_list").classList.remove("table-striped")
+    document.getElementById("result_list").classList.add("table-sm")
+</script>
+<script>
+    function my_print(){
+      document.getElementsByClassName("content border-bottom mb-2")[0].classList.add("no-print")
+      document.getElementById("change-list-filters").classList.add("no-print")
+      
+      
+      window.print()
+      
+    }
+  </script>
+{% endblock j %}
+
